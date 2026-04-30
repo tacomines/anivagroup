@@ -49,7 +49,7 @@ export default function EnquiryForm() {
       return;
     }
 
-    const text = `Hello Srija Boutique,
+    const text = `Hello Aniva Group,
 
 I am ${formData.name}
 
