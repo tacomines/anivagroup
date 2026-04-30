@@ -45,7 +45,8 @@ Please share partnership details.
       <div className={styles.hero}>
         <img
           src="/images/banners/theam-image.png"
-          alt="Real estate partnership opportunities with Aniva Group"
+          alt="Real estate partnership opportunities in Hyderabad with Aniva Group"
+          loading="eager"
         />
 
         <div className={styles.overlay}>
@@ -54,12 +55,9 @@ Please share partnership details.
         </div>
       </div>
 
-      {/* 🔥 SEO TEXT */}
       <div className={styles.introText}>
         <p>
-          Explore real estate partnership opportunities with Aniva Group in
-          Hyderabad including joint ventures, land development, and channel
-          partnerships designed for long-term growth and success.
+          Explore real estate partnership opportunities with Aniva Group in Hyderabad including joint ventures, land development, and channel partnerships designed for long-term growth and success.
         </p>
       </div>
 
@@ -77,8 +75,7 @@ Please share partnership details.
         <div className={styles.block}>
           <h2>Why Partner With Aniva?</h2>
           <p>
-            We provide strong market presence, premium developments, and a
-            transparent ecosystem to ensure mutual growth and long-term success.
+            We provide strong market presence, premium developments, and a transparent ecosystem to ensure mutual growth and long-term success.
           </p>
         </div>
 
@@ -126,10 +123,10 @@ Please share partnership details.
         <div className={styles.logos}>
           <h2>Trusted By</h2>
           <div className={styles.logoRow}>
-            <img src="/images/logo99.webp" alt="Partner logo" />
-            <img src="/images/logo99.webp" alt="Partner logo" />
-            <img src="/images/logo99.webp" alt="Partner logo" />
-            <img src="/images/logo99.webp" alt="Partner logo" />
+            <img src="/images/logo99.webp" alt="Trusted partner" loading="lazy" />
+            <img src="/images/logo99.webp" alt="Trusted partner" loading="lazy" />
+            <img src="/images/logo99.webp" alt="Trusted partner" loading="lazy" />
+            <img src="/images/logo99.webp" alt="Trusted partner" loading="lazy" />
           </div>
         </div>
 
@@ -139,14 +136,18 @@ Please share partnership details.
         <div className={styles.form}>
           <h2>Become a Partner</h2>
 
+          <label htmlFor="name">Your Name</label>
           <input
-            placeholder="Your Name"
+            id="name"
+            placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
 
+          <label htmlFor="phone">Mobile Number</label>
           <input
-            placeholder="Mobile Number"
+            id="phone"
+            placeholder="Enter mobile number"
             maxLength={10}
             value={phone}
             onChange={(e) =>
@@ -154,7 +155,12 @@ Please share partnership details.
             }
           />
 
-          <select value={type} onChange={(e) => setType(e.target.value)}>
+          <label htmlFor="type">Partner Type</label>
+          <select
+            id="type"
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+          >
             <option value="">Select Partner Type</option>
             <option>Channel Partner</option>
             <option>Landowner</option>
