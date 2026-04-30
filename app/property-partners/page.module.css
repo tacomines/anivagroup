@@ -34,7 +34,7 @@
 }
 
 .overlay h1 {
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 600;
 }
 
@@ -143,6 +143,7 @@
   justify-content: center;
   gap: 40px;
   margin-top: 20px;
+  flex-wrap: wrap; /* ✅ FIX */
 }
 
 .logoRow img {
@@ -155,10 +156,10 @@
   opacity: 1;
 }
 
-/* 🔥 FORM FIX (MAIN PREMIUM CHANGE) */
+/* FORM */
 .form {
-  max-width: 700px;       /* ✅ KEY FIX */
-  margin: 0 auto;         /* ✅ center */
+  max-width: 700px;
+  margin: 0 auto;
   background: white;
   padding: 32px;
   border-radius: 16px;
@@ -180,13 +181,6 @@
   border-radius: 8px;
   border: 1px solid #ddd;
   font-size: 14px;
-}
-
-.form input:focus,
-.form select:focus {
-  outline: none;
-  border-color: #1DA1F2;
-  box-shadow: 0 0 0 2px rgba(29,161,242,0.2);
 }
 
 /* BUTTON */
@@ -211,11 +205,46 @@
   font-size: 13px;
 }
 
-/* MOBILE */
+/* ================= MOBILE FIXES ================= */
+
 @media (max-width: 1024px) {
   .grid,
-  .testimonialGrid,
+  .testimonialGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2,1fr); /* ✅ FIX */
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    height: 220px;
+  }
+
+  .overlay h1 {
+    font-size: 24px; /* ✅ FIX */
+  }
+
+  .overlay p {
+    font-size: 13px;
+  }
+
   .stats {
     grid-template-columns: 1fr;
+  }
+
+  .form {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 40px 16px;
+  }
+
+  .introText {
+    margin-top: 20px;
   }
 }
