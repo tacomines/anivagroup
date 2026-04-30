@@ -147,3 +147,46 @@
   }
 }
 
+.visualBlock img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.visualBlock img:hover {
+  transform: scale(1.05);
+}
+
+/* OTHER PROJECTS */
+.otherProjects {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.otherProjects h3 {
+  margin-bottom: 12px;
+}
+
+.otherCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.otherCard img {
+  width: 60px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.otherCard span {
+  font-size: 14px;
+}
+

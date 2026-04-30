@@ -2,8 +2,18 @@
 
 import styles from "./page.module.css";
 import EnquiryForm from "@/components/forms/EnquiryForm";
+import { useGallery } from "@/context/GalleryContext";
+import { projects } from "@/data/projects";
+import Link from "next/link";
 
 export default function ProjectDetailClient({ project }: any) {
+  const { openGallery } = useGallery();
+
+  /* ✅ FILTER OTHER PROJECTS */
+  const otherProjects = projects.filter(
+    (p) => p.slug !== project.slug
+  );
+
   return (
     <section className={styles.section}>
 
@@ -12,7 +22,7 @@ export default function ProjectDetailClient({ project }: any) {
         <div className={styles.heroImage}>
           <img
             src={project.image}
-            alt={`${project.name} project in ${project.location} Hyderabad`}
+            alt={`${project.name} project in ${project.location}`}
           />
         </div>
 
@@ -44,10 +54,8 @@ export default function ProjectDetailClient({ project }: any) {
             {/* OVERVIEW */}
             <p className={styles.overview}>
               {project.name} is a premium real estate project located in{" "}
-              {project.location}, Hyderabad. Designed for modern living,
-              this development offers excellent connectivity, infrastructure,
-              and future growth potential, making it ideal for both investors
-              and homeowners.
+              {project.location}, Hyderabad with excellent infrastructure
+              and investment potential.
             </p>
 
             {/* AMENITIES */}
@@ -68,9 +76,14 @@ export default function ProjectDetailClient({ project }: any) {
 
             {/* GALLERY */}
             <div className={styles.visualBlock}>
-              <img src={project.image} alt={project.name} />
-              <img src={project.image} alt={project.name} />
-              <img src={project.image} alt={project.name} />
+              {project.gallery.map((img: string, index: number) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={project.name}
+                  onClick={() => openGallery(project.gallery, index)}
+                />
+              ))}
             </div>
 
             {/* MEDIA */}
@@ -82,16 +95,17 @@ export default function ProjectDetailClient({ project }: any) {
               ></iframe>
 
               <iframe
-                src="https://maps.google.com/maps?q=Tellapur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src={`https://maps.google.com/maps?q=${project.location}&output=embed`}
                 title="Project location map"
               ></iframe>
             </div>
 
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT SIDEBAR */}
           <div className={styles.sidebar}>
 
+            {/* DETAILS */}
             <div className={styles.details}>
               <h3>Project Details</h3>
               <p><strong>Location:</strong> {project.location}</p>
@@ -99,9 +113,26 @@ export default function ProjectDetailClient({ project }: any) {
               <p><strong>Status:</strong> Ongoing</p>
             </div>
 
+            {/* FORM */}
             <div className={styles.form}>
               <h3>Schedule Visit</h3>
               <EnquiryForm />
+            </div>
+
+            {/* ✅ OTHER PROJECTS */}
+            <div className={styles.otherProjects}>
+              <h3>Other Projects</h3>
+
+              {otherProjects.map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/ongoing-projects/${item.slug}`}
+                  className={styles.otherCard}
+                >
+                  <img src={item.image} alt={item.name} />
+                  <span>{item.name}</span>
+                </Link>
+              ))}
             </div>
 
           </div>
