@@ -51,7 +51,7 @@ export default function ContactPageClient() {
 
             <div className={styles.block}>
               <h3>Phone</h3>
-              <a href="tel:9699445566">+91 90637 25514</a>
+              <a href="tel:9063725514">+91 90637 25514</a>
             </div>
 
             <div className={styles.block}>
@@ -98,7 +98,7 @@ export default function ContactPageClient() {
             "@type": "RealEstateAgent",
             name: "Aniva Group",
             url: "https://anivagroup.com",
-            telephone: "+919699445566",
+            telephone: "+919063725514",
             email: "sales@anivagroup.com",
             address: {
               "@type": "PostalAddress",

@@ -33,7 +33,7 @@ Please share partnership details.
     `;
 
     window.open(
-      `https://wa.me/919699445566?text=${encodeURIComponent(message)}`,
+      `https://wa.me/919063725514?text=${encodeURIComponent(message)}`,
       "_blank"
     );
   };
