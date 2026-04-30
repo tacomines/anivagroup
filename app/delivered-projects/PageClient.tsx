@@ -20,12 +20,12 @@ export default function DeliveredClient() {
 
   return (
     <section className={styles.section}>
-      
+
       {/* HERO */}
       <div className={styles.hero}>
         <img
           src="/images/banners/theam-image.png"
-          alt="Completed real estate projects by Aniva Group in Hyderabad and Bangalore"
+          alt="Completed real estate projects by Aniva Group"
         />
 
         <div className={styles.heroOverlay}>
@@ -47,7 +47,7 @@ export default function DeliveredClient() {
         </div>
       </div>
 
-      {/* 🔥 SEO CONTENT */}
+      {/* SEO TEXT */}
       <div className={styles.introText}>
         <p>
           Aniva Group has successfully delivered premium residential projects
@@ -67,17 +67,12 @@ export default function DeliveredClient() {
             >
               <img
                 src={project.images[0]}
-                alt={`${project.name} completed project in ${project.location}`}
+                alt={`${project.name} in ${project.location}`}
               />
 
               <div className={styles.content}>
                 <h3>{project.name}</h3>
                 <p className={styles.location}>{project.location}</p>
-
-                <div className={styles.meta}>
-                  <span>{project.units}</span>
-                  <span>{project.area || "—"}</span>
-                </div>
               </div>
             </div>
           ))}
