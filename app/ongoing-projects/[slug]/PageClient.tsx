@@ -18,29 +18,48 @@ export default function ProjectDetailClient({ project }: any) {
     <section className={styles.section}>
 
       {/* HERO */}
-      <div className={styles.heroSplit}>
-        <div className={styles.heroImage}>
-          <img
-            src={project.image}
-            alt={`${project.name} project in ${project.location}`}
-          />
-        </div>
+      <div className={styles.heroWrapper}>
+        <div className={styles.heroSplit}>
+          
+          {/* LEFT IMAGE */}
+          <div className={styles.heroImage}>
+            <img src={project.image} alt={project.name} />
+          </div>
 
-        <div className={styles.heroContent}>
-          <h1>{project.name}</h1>
+          {/* RIGHT CONTENT */}
+          <div className={styles.heroContent}>
+            <h1>{project.name}</h1>
 
-          <p className={styles.location}>
-            {project.location}, Hyderabad
-          </p>
+            <p className={styles.location}>
+              {project.location}
+            </p>
 
-          <p className={styles.desc}>
-            Premium residential plotted development with excellent connectivity,
-            modern infrastructure, and strong long-term investment potential.
-          </p>
+            <p className={styles.desc}>
+              {project.description}
+            </p>
 
-          <button className={styles.cta}>
-            Schedule Visit
-          </button>
+            <div className={styles.stats}>
+              <div>
+                <strong>{project.floors}</strong>
+                <span>Floors</span>
+              </div>
+
+              <div>
+                <strong>{project.units}</strong>
+                <span>Flats</span>
+              </div>
+
+              <div>
+                <strong>{project.amenitiesCount}</strong>
+                <span>Amenities</span>
+              </div>
+            </div>
+
+            <button className={styles.cta}>
+              Schedule Visit
+            </button>
+          </div>
+
         </div>
       </div>
 
