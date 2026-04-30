@@ -7,14 +7,22 @@
 .hero {
   position: relative;
   height: 300px;
+
+  /* ✅ FIX: push below navbar */
+  margin-top: var(--navbar-height);
+
+  overflow: hidden;
 }
 
+/* HERO IMAGE */
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block; /* removes tiny gap issue */
 }
 
+/* OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
@@ -136,16 +144,12 @@
     grid-template-columns: 1fr;
   }
 }
+
 /* ERROR MESSAGE */
 .error {
   color: #DC2626;
   font-size: 13px;
   margin-bottom: 10px;
-}
-
-/* HERO GAP FIX */
-.hero {
-  margin-top: -1px;
 }
 
 /* SEO TEXT */

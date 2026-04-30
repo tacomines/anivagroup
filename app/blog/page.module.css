@@ -8,15 +8,20 @@
   position: relative;
   height: 260px;
   overflow: hidden;
+
+  /* ✅ FIX: push below navbar properly */
+  margin-top: var(--navbar-height);
 }
 
+/* HERO IMAGE */
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block; /* removes tiny gap issue */
 }
 
-/* 🔥 IMPORTANT FIX */
+/* OVERLAY */
 .heroOverlay {
   position: absolute;
   inset: 0;
@@ -60,7 +65,7 @@
   border-radius: 14px;
   overflow: hidden;
 
-  text-decoration: none; /* 🔥 FIX BLUE LINKS */
+  text-decoration: none;
   color: inherit;
 
   border: 1px solid #E5E7EB;
@@ -107,11 +112,6 @@
   .grid {
     grid-template-columns: 1fr;
   }
-}
-
-/* HERO GAP FIX */
-.hero {
-  margin-top: -1px;
 }
 
 /* SEO TEXT */

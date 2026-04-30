@@ -1,3 +1,4 @@
+/* SECTION */
 .section {
   background: #F9FAFB;
 }
@@ -6,14 +7,22 @@
 .hero {
   position: relative;
   height: 260px;
+
+  /* ✅ FIX: push below navbar correctly */
+  margin-top: var(--navbar-height);
+
+  overflow: hidden;
 }
 
+/* HERO IMAGE */
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
+/* OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
@@ -211,11 +220,6 @@
   .brochureActions {
     justify-content: center;
   }
-}
-
-/* HERO GAP FIX */
-.hero {
-  margin-top: -1px;
 }
 
 /* SEO TEXT */

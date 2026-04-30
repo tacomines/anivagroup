@@ -7,14 +7,22 @@
 .hero {
   position: relative;
   height: 260px;
+
+  /* ✅ FIX: push below navbar */
+  margin-top: var(--navbar-height);
+
+  overflow: hidden;
 }
 
+/* HERO IMAGE */
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block; /* removes unwanted gap */
 }
 
+/* OVERLAY */
 .heroOverlay {
   position: absolute;
   inset: 0;
@@ -30,6 +38,7 @@
   padding: 0 20px;
 }
 
+/* HERO TEXT */
 .heroOverlay h1 {
   font-size: 32px;
   margin-bottom: 6px;
@@ -152,6 +161,17 @@
   color: #166534;
 }
 
+/* INTRO TEXT */
+.introText {
+  max-width: 900px;
+  margin: 20px auto 0;
+  text-align: center;
+  color: #4B5563;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
 /* MOBILE */
 @media (max-width: 1024px) {
   .grid {
@@ -165,14 +185,4 @@
   .heroOverlay h1 {
     font-size: 26px;
   }
-}
-
-.introText {
-  max-width: 900px;
-  margin: 20px auto 0;
-  text-align: center;
-  color: #4B5563;
-  font-size: 15px;
-  line-height: 1.6;
-  padding: 0 20px;
 }
