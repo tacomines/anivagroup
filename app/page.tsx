@@ -2,7 +2,7 @@ import { generateSEO } from "@/config/seo";
 import HomePageClient from "./PageClient";
 import type { Metadata } from "next";
 
-/* ✅ ENHANCED SEO */
+/* ✅ SEO + STRUCTURED DATA */
 export const metadata: Metadata = {
   ...generateSEO({
     title: "Premium Real Estate Projects in Hyderabad",
@@ -41,6 +41,33 @@ export const metadata: Metadata = {
   },
 };
 
+/* ✅ STRUCTURED DATA */
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  name: "Aniva Group",
+  url: "https://anivagroup.com",
+  description:
+    "Aniva Group offers premium real estate projects in Hyderabad including plots, villas and investment properties.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Hyderabad",
+    addressCountry: "India",
+  },
+};
+
 export default function HomePage() {
-  return <HomePageClient />;
+  return (
+    <>
+      {/* ✅ SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+
+      <HomePageClient />
+    </>
+  );
 }

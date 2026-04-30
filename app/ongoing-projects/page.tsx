@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   ...generateSEO({
-    title: "Ongoing Real Estate Projects in Hyderabad",
+    title: "Ongoing Real Estate Projects in Hyderabad | Aniva Group",
     description:
       "Explore ongoing real estate projects by Aniva Group in Tellapur, Nallagandla and prime Hyderabad locations with high investment potential.",
     path: "/ongoing-projects",
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   keywords: [
     "ongoing projects Hyderabad",
     "plots in Tellapur",
+    "plots in Nallagandla",
     "HMDA plots Hyderabad",
     "real estate investment Hyderabad",
     "Aniva projects",

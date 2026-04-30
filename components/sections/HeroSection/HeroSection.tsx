@@ -33,14 +33,14 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT YOUTUBE VIDEO */}
+        {/* RIGHT YOUTUBE VIDEO (UNCHANGED) */}
         <div className={styles.videoWrapper}>
           <iframe
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0`}
             title="Aniva Group Video"
             allow="autoplay; encrypted-media"
             allowFullScreen
-          ></iframe>
+          />
         </div>
 
       </div>

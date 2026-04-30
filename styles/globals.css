@@ -31,12 +31,7 @@ html, body {
   color: var(--text-primary);
 }
 
-/* ===============================
-   LAYOUT FIX
-================================= */
-main {
-  padding-top: var(--navbar-height);
-}
+
 
 /* ===============================
    GLOBAL UTILITIES

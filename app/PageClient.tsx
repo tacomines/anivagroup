@@ -1,17 +1,38 @@
 "use client";
 
-import HeroSection from "@/components/sections/HeroSection/HeroSection";
-import FeatureProjectsSection from "@/components/sections/FeatureProjectsSection/FeatureProjectsSection";
-import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection/WhyChooseUsSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection/TestimonialsSection";
-import VideoSection from "@/components/sections/VideoSection/VideoSection";
-import CTASection from "@/components/sections/CTASection/CTASection";
+import dynamic from "next/dynamic";
+
+/* ✅ LAZY LOAD NON-CRITICAL SECTIONS (PERFORMANCE BOOST) */
+const HeroSection = dynamic(
+  () => import("@/components/sections/HeroSection/HeroSection"),
+  { ssr: true }
+);
+
+const FeatureProjectsSection = dynamic(
+  () => import("@/components/sections/FeatureProjectsSection/FeatureProjectsSection")
+);
+
+const WhyChooseUsSection = dynamic(
+  () => import("@/components/sections/WhyChooseUsSection/WhyChooseUsSection")
+);
+
+const TestimonialsSection = dynamic(
+  () => import("@/components/sections/TestimonialsSection/TestimonialsSection")
+);
+
+const VideoSection = dynamic(
+  () => import("@/components/sections/VideoSection/VideoSection")
+);
+
+const CTASection = dynamic(
+  () => import("@/components/sections/CTASection/CTASection")
+);
 
 export default function HomePageClient() {
   return (
     <main>
 
-      {/* 🔥 HERO (H1 SHOULD LIVE INSIDE THIS COMPONENT) */}
+      {/* HERO (CRITICAL FOR LCP — KEEP SSR) */}
       <section aria-label="Hero Section">
         <HeroSection />
       </section>
@@ -21,7 +42,7 @@ export default function HomePageClient() {
         <FeatureProjectsSection />
       </section>
 
-      {/* WHY CHOOSE US */}
+      {/* WHY CHOOSE */}
       <section aria-label="Why Choose Aniva Group">
         <WhyChooseUsSection />
       </section>

@@ -5,14 +5,22 @@ import EnquiryForm from "@/components/forms/EnquiryForm";
 import { useGallery } from "@/context/GalleryContext";
 import { projects } from "@/data/projects";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProjectDetailClient({ project }: any) {
   const { openGallery } = useGallery();
 
-  /* ✅ FILTER OTHER PROJECTS */
   const otherProjects = projects.filter(
     (p) => p.slug !== project.slug
   );
+
+  /* ✅ SCROLL FUNCTION */
+  const handleScheduleClick = () => {
+    const formSection = document.getElementById("schedule-form");
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className={styles.section}>
@@ -21,12 +29,23 @@ export default function ProjectDetailClient({ project }: any) {
       <div className={styles.heroWrapper}>
         <div className={styles.heroSplit}>
           
-          {/* LEFT IMAGE */}
           <div className={styles.heroImage}>
-            <img src={project.image} alt={project.name} />
+            <Image
+              src={project.image}
+              alt={`${project.name} in ${project.location}`}
+              width={800}
+              height={500}
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "12px",
+              }}
+            />
           </div>
 
-          {/* RIGHT CONTENT */}
           <div className={styles.heroContent}>
             <h1>{project.name}</h1>
 
@@ -55,7 +74,12 @@ export default function ProjectDetailClient({ project }: any) {
               </div>
             </div>
 
-            <button className={styles.cta}>
+            {/* ✅ FIXED BUTTON */}
+            <button
+              className={styles.cta}
+              onClick={handleScheduleClick}
+              aria-label={`Schedule a visit for ${project.name}`}
+            >
               Schedule Visit
             </button>
           </div>
@@ -69,15 +93,12 @@ export default function ProjectDetailClient({ project }: any) {
 
           {/* LEFT */}
           <div className={styles.main}>
-
-            {/* OVERVIEW */}
             <p className={styles.overview}>
               {project.name} is a premium real estate project located in{" "}
               {project.location}, Hyderabad with excellent infrastructure
               and investment potential.
             </p>
 
-            {/* AMENITIES */}
             <div className={styles.amenities}>
               <span>Clubhouse</span>
               <span>Children Park</span>
@@ -85,7 +106,6 @@ export default function ProjectDetailClient({ project }: any) {
               <span>Security</span>
             </div>
 
-            {/* HIGHLIGHTS */}
             <ul className={styles.highlights}>
               <li>HMDA Approved Layout</li>
               <li>Prime Location</li>
@@ -93,38 +113,36 @@ export default function ProjectDetailClient({ project }: any) {
               <li>Clear Title</li>
             </ul>
 
-            {/* GALLERY */}
             <div className={styles.visualBlock}>
               {project.gallery.map((img: string, index: number) => (
                 <img
                   key={index}
                   src={img}
-                  alt={project.name}
+                  alt={`${project.name} image ${index + 1}`}
+                  loading="lazy"
                   onClick={() => openGallery(project.gallery, index)}
                 />
               ))}
             </div>
 
-            {/* MEDIA */}
             <div className={styles.mediaBlock}>
               <iframe
                 src="https://www.youtube.com/embed/UhUa8S0jVVQ"
-                allowFullScreen
-                title="Project video"
+                title={`${project.name} video`}
+                loading="lazy"
               ></iframe>
 
               <iframe
                 src={`https://maps.google.com/maps?q=${project.location}&output=embed`}
-                title="Project location map"
+                title={`${project.name} map`}
+                loading="lazy"
               ></iframe>
             </div>
-
           </div>
 
-          {/* RIGHT SIDEBAR */}
+          {/* SIDEBAR */}
           <div className={styles.sidebar}>
 
-            {/* DETAILS */}
             <div className={styles.details}>
               <h3>Project Details</h3>
               <p><strong>Location:</strong> {project.location}</p>
@@ -132,13 +150,12 @@ export default function ProjectDetailClient({ project }: any) {
               <p><strong>Status:</strong> Ongoing</p>
             </div>
 
-            {/* FORM */}
-            <div className={styles.form}>
+            {/* ✅ ADD ID HERE */}
+            <div id="schedule-form" className={styles.form}>
               <h3>Schedule Visit</h3>
               <EnquiryForm />
             </div>
 
-            {/* ✅ OTHER PROJECTS */}
             <div className={styles.otherProjects}>
               <h3>Other Projects</h3>
 

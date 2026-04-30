@@ -43,7 +43,7 @@ export default function Footer() {
             onClick={handleLogoClick}
           >
             <img
-              src="/images/logo1.png"
+              src="/images/logo99.webp"
               alt="Aniva Group Logo"
             />
           </Link>
@@ -160,7 +160,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/logo6.png" alt="Tacovex" />
+            <img src="/images/logo66.webp" alt="Tacovex" />
           </a>
         </div>
 

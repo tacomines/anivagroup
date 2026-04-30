@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./FeatureProjectsSection.module.css";
 
 const projects = [
@@ -39,13 +40,31 @@ export default function FeatureProjectsSection() {
               href={`/ongoing-projects/${project.slug}`}
               className={styles.card}
             >
+              {/* IMAGE */}
               <div className={styles.imageWrapper}>
-                <img
+                <Image
                   src={project.image}
                   alt={`${project.title} real estate project in ${project.location}`}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
+
+                {/* OVERLAY */}
+                <div className={styles.overlay}>
+                  <img
+                    src="/images/icon.png"
+                    alt="Aniva Group"
+                    className={styles.logo}
+                  />
+
+                  <button className={styles.cta}>
+                    View Project →
+                  </button>
+                </div>
               </div>
 
+              {/* CONTENT */}
               <div className={styles.cardContent}>
                 <h3>{project.title}</h3>
                 <p>{project.location}</p>

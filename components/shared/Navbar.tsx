@@ -60,7 +60,7 @@ export default function Navbar() {
             className={styles["navbar-logo"]}
             onClick={handleLogoClick}
           >
-            <img src="/images/logo9.png" alt="Aniva Group Logo" />
+            <img src="/images/logo55.webp" alt="Aniva Group Logo" />
           </Link>
 
           {/* HAMBURGER */}
