@@ -126,26 +126,11 @@ Please share partnership details.
         <div className={styles.logos}>
           <h2>Trusted By</h2>
           <div className={styles.logoRow}>
-            <img src="/images/logo-big.png" alt="Partner logo" />
-            <img src="/images/logo-big.png" alt="Partner logo" />
-            <img src="/images/logo-big.png" alt="Partner logo" />
-            <img src="/images/logo-big.png" alt="Partner logo" />
+            <img src="/images/logo99.webp" alt="Partner logo" />
+            <img src="/images/logo99.webp" alt="Partner logo" />
+            <img src="/images/logo99.webp" alt="Partner logo" />
+            <img src="/images/logo99.webp" alt="Partner logo" />
           </div>
-        </div>
-
-        {/* BROCHURE CTA */}
-        <div className={styles.brochure}>
-          <div>
-            <h2>Download Partnership Brochure</h2>
-            <p>Get detailed insights about our projects and partnerships.</p>
-          </div>
-
-          <button
-            className={styles.downloadBtn}
-            onClick={() => setOpen(true)}
-          >
-            Download Brochure
-          </button>
         </div>
 
         {open && <BrochureModal onClose={() => setOpen(false)} />}
