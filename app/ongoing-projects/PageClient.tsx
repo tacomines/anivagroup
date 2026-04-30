@@ -48,7 +48,7 @@ export default function ProjectsPageClient() {
 
                 {/* LOGO */}
                 <div className={styles.logoOverlay}>
-                  <img src="/images/logo-big.png" alt="Aniva Group logo" />
+                  <img src="/images/icon.png" alt="Aniva Group logo" />
                 </div>
               </div>
 
