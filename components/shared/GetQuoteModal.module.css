@@ -1,0 +1,91 @@
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* MODAL */
+.modal {
+  width: 420px;
+  max-width: 90%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  position: relative;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CLOSE */
+.close {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* TITLE */
+.modal h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+  color: #1F2937;
+}
+
+/* REMOVE GRADIENT TEXT (corporate look) */
+.gradient {
+  color: #1DA1F2; /* clean brand color */
+  font-weight: 600;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* INPUTS */
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  outline: none;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #1DA1F2;
+}
+
+/* BUTTON */
+.form button {
+  background: linear-gradient(135deg, #1DA1F2, #22C55E);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form button:hover {
+  opacity: 0.9;
+}

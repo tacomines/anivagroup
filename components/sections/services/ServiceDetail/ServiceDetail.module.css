@@ -1,0 +1,50 @@
+.section {
+  padding: 80px 0;
+  background: #f9fafb;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.card span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e11d74;
+}
+
+.card h4 {
+  margin-top: 10px;
+}
+
+.card p {
+  margin-top: 8px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

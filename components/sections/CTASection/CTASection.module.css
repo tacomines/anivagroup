@@ -1,0 +1,83 @@
+/* SECTION */
+.section {
+  padding: 70px 0;
+  background: linear-gradient(135deg, #1DA1F2, #22C55E);
+  text-align: center;
+  color: white;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* TITLE */
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+/* TEXT */
+.section p {
+  font-size: 16px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* BUTTONS */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* PRIMARY */
+.primaryBtn {
+  background: white;
+  color: #1DA1F2;
+
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.primaryBtn:hover {
+  opacity: 0.9;
+}
+
+/* SECONDARY */
+.secondaryBtn {
+  border: 1px solid white;
+  color: white;
+
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: 0.25s ease;
+}
+
+.secondaryBtn:hover {
+  background: white;
+  color: #1DA1F2;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

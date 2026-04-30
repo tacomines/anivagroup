@@ -1,0 +1,89 @@
+/* SEO TEXT */
+.introText {
+  max-width: 850px;
+  margin: 0 auto 30px;
+  text-align: center;
+  color: #6B7280;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: #F9FAFB;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #E5E7EB;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #1F2937;
+}
+
+.card p {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+/* STATS */
+.stats {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.stats div {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.stats h3 {
+  font-size: 18px;
+  color: #1DA1F2;
+  margin-bottom: 6px;
+}
+
+.stats p {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.cta a {
+  color: #1DA1F2;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .grid,
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

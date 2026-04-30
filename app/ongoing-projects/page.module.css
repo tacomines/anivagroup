@@ -1,0 +1,153 @@
+.section {
+  background: #F9FAFB;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 260px;
+
+  margin-top: -1px; /* ✅ FIX GAP */
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.heroOverlay h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.heroOverlay p {
+  font-size: 15px;
+}
+
+/* 🔥 SEO TEXT */
+.introText {
+  max-width: 900px;
+  margin: 20px auto 0;
+  text-align: center;
+  color: #4B5563;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px 50px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  text-decoration: none;
+  color: inherit;
+
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* LOGO */
+.logoOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease;
+}
+
+.logoOverlay img {
+  height: 32px;
+}
+
+.card:hover .logoOverlay {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* CONTENT */
+.cardContent {
+  padding: 16px;
+}
+
+.cardContent h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #1F2937;
+}
+
+.location {
+  color: #1DA1F2;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.cardContent p {
+  font-size: 14px;
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

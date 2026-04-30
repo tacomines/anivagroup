@@ -1,0 +1,126 @@
+/* SECTION */
+.section {
+  background: #F9FAFB;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔥 IMPORTANT FIX */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: #fff;
+}
+
+.heroOverlay h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.heroOverlay p {
+  font-size: 15px;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+
+  text-decoration: none; /* 🔥 FIX BLUE LINKS */
+  color: inherit;
+
+  border: 1px solid #E5E7EB;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.content {
+  padding: 16px;
+}
+
+.content h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #1F2937;
+}
+
+.content p {
+  font-size: 13px;
+  color: #6B7280;
+  margin-bottom: 10px;
+}
+
+/* DATE */
+.date {
+  font-size: 12px;
+  color: #9CA3AF;
+}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* HERO GAP FIX */
+.hero {
+  margin-top: -1px;
+}
+
+/* SEO TEXT */
+.introText {
+  max-width: 900px;
+  margin: 20px auto 0;
+  text-align: center;
+  color: #4B5563;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 0 20px;
+}

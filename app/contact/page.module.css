@@ -1,0 +1,140 @@
+.section {
+  background: #F9FAFB;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.heroOverlay h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.heroOverlay p {
+  font-size: 15px;
+}
+
+/* CONTAINER (WIDER NOW) */
+.container {
+  max-width: 1400px; /* ✅ increased */
+  margin: auto;
+  padding: 50px 24px;
+}
+
+/* GRID (BETTER BALANCE) */
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.3fr; /* ✅ improved */
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* COMMON CARD STYLE */
+.map,
+.info,
+.form {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  padding: 20px;
+  height: 100%; /* ✅ equal height */
+}
+
+/* MAP */
+.map {
+  padding: 0;
+  overflow: hidden;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border: none;
+}
+
+/* INFO */
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+}
+
+.block h3 {
+  font-size: 15px;
+  color: #1F2937;
+  margin-bottom: 6px;
+}
+
+.block a {
+  color: #1DA1F2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.block p {
+  color: #4B5563;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map iframe {
+    min-height: 300px;
+  }
+}
+
+/* HERO GAP FIX */
+.hero {
+  margin-top: -1px;
+}
+
+/* SEO TEXT */
+.introText {
+  max-width: 900px;
+  margin: 20px auto 0;
+  text-align: center;
+  color: #4B5563;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 0 20px;
+}

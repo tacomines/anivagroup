@@ -1,0 +1,149 @@
+.section {
+  background: #F9FAFB;
+}
+
+/* HERO */
+.heroSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroContent {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroContent h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.location {
+  color: #1DA1F2;
+  margin-bottom: 10px;
+}
+
+.desc {
+  color: #4B5563;
+  margin-bottom: 20px;
+}
+
+.cta {
+  background: linear-gradient(135deg, #1DA1F2, #22C55E);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* MAIN */
+.overview {
+  margin-bottom: 20px;
+  color: #4B5563;
+}
+
+.amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.amenities span {
+  background: #E0F2FE;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.highlights {
+  margin-bottom: 20px;
+  padding-left: 18px;
+}
+
+/* VISUAL */
+.visualBlock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.visualBlock img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* MEDIA */
+.mediaBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.mediaBlock iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.details {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .heroSplit {
+    grid-template-columns: 1fr;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mediaBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .visualBlock {
+    grid-template-columns: 1fr;
+  }
+}
+
