@@ -4,6 +4,21 @@ import styles from "./page.module.css";
 import EnquiryForm from "@/components/forms/EnquiryForm";
 
 export default function ProjectDetailClient({ project }: any) {
+
+  /* ✅ WHATSAPP CTA */
+  const handleWhatsApp = () => {
+    const message = `Hello Aniva Group,
+
+I am interested in ${project.name} located in ${project.location}.
+
+Please share more details.`;
+
+    window.open(
+      `https://wa.me/919699445566?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  };
+
   return (
     <section className={styles.section}>
 
@@ -24,13 +39,21 @@ export default function ProjectDetailClient({ project }: any) {
           </p>
 
           <p className={styles.desc}>
-            Premium residential plotted development with excellent connectivity,
-            modern infrastructure, and strong long-term investment potential.
+            {project.description ||
+              `${project.name} is a premium plotted development in ${project.location}, Hyderabad offering excellent connectivity and investment potential.`}
           </p>
 
-          <button className={styles.cta}>
-            Schedule Visit
-          </button>
+          <div className={styles.heroActions}>
+            <button className={styles.cta} onClick={handleWhatsApp}>
+              Schedule Visit
+            </button>
+
+            {project.brochure && (
+              <a href={project.brochure} target="_blank">
+                Download Brochure
+              </a>
+            )}
+          </div>
         </div>
       </div>
 
@@ -44,48 +67,58 @@ export default function ProjectDetailClient({ project }: any) {
             {/* OVERVIEW */}
             <p className={styles.overview}>
               {project.name} is a premium real estate project located in{" "}
-              {project.location}, Hyderabad. Designed for modern living,
-              this development offers excellent connectivity, infrastructure,
-              and future growth potential, making it ideal for both investors
-              and homeowners.
+              {project.location}, Hyderabad. This project is designed for
+              modern living with excellent infrastructure, connectivity,
+              and strong appreciation potential.
             </p>
 
             {/* AMENITIES */}
-            <div className={styles.amenities}>
-              <span>Clubhouse</span>
-              <span>Children Park</span>
-              <span>Street Lights</span>
-              <span>Security</span>
-            </div>
+            {project.amenities && (
+              <div className={styles.amenities}>
+                {project.amenities.map((item: string, i: number) => (
+                  <span key={i}>{item}</span>
+                ))}
+              </div>
+            )}
 
             {/* HIGHLIGHTS */}
-            <ul className={styles.highlights}>
-              <li>HMDA Approved Layout</li>
-              <li>Prime Location</li>
-              <li>Blacktop Roads</li>
-              <li>Clear Title</li>
-            </ul>
+            {project.highlights && (
+              <ul className={styles.highlights}>
+                {project.highlights.map((item: string, i: number) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            )}
 
             {/* GALLERY */}
-            <div className={styles.visualBlock}>
-              <img src={project.image} alt={project.name} />
-              <img src={project.image} alt={project.name} />
-              <img src={project.image} alt={project.name} />
-            </div>
+            {project.gallery && (
+              <div className={styles.visualBlock}>
+                {project.gallery.map((img: string, i: number) => (
+                  <img key={i} src={img} alt={project.name} />
+                ))}
+              </div>
+            )}
 
-            {/* MEDIA */}
-            <div className={styles.mediaBlock}>
-              <iframe
-                src="https://www.youtube.com/embed/UhUa8S0jVVQ"
-                allowFullScreen
-                title="Project video"
-              ></iframe>
+            {/* VIDEO */}
+            {project.video && (
+              <div className={styles.mediaBlock}>
+                <iframe
+                  src={project.video}
+                  allowFullScreen
+                  title="Project video"
+                ></iframe>
+              </div>
+            )}
 
-              <iframe
-                src="https://maps.google.com/maps?q=Tellapur&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                title="Project location map"
-              ></iframe>
-            </div>
+            {/* MAP */}
+            {project.map && (
+              <div className={styles.mediaBlock}>
+                <iframe
+                  src={project.map}
+                  title="Project location map"
+                ></iframe>
+              </div>
+            )}
 
           </div>
 

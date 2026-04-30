@@ -4,8 +4,15 @@ import { notFound } from "next/navigation";
 import { generateSEO } from "@/config/seo";
 import type { Metadata } from "next";
 
-/* ✅ SEO + FIXED PARAMS */
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+/* ✅ FIXED TYPES */
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
+/* ✅ SEO */
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
 
   const project = projects.find((p) => p.slug === slug);
@@ -19,7 +26,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   return {
     ...generateSEO({
       title: `${project.name} in ${project.location}`,
-      description: `${project.name} is a premium real estate project in ${project.location}, Hyderabad offering excellent investment potential and modern amenities.`,
+      description: `${project.name} is a premium real estate project in ${project.location}, Hyderabad offering excellent investment potential.`,
       path: `/ongoing-projects/${project.slug}`,
     }),
 
@@ -45,8 +52,8 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   };
 }
 
-/* ✅ MAIN PAGE FIX */
-export default async function ProjectPage({ params }: any) {
+/* ✅ MAIN PAGE */
+export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
 
   const project = projects.find((p) => p.slug === slug);
